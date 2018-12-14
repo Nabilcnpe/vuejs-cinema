@@ -6,6 +6,10 @@ import MovieList from './components/MovieList.vue';
 import MovieFilter from './components/MovieFilter.vue';
 Vue.use(VueResource);
 
+import moment from 'moment-timezone';
+moment.tz.setDefault("UTC");
+Object.defineProperty(Vue.prototype, '$moment', { value: moment });
+
 new Vue({
    el: '#app',
     data: {
@@ -33,5 +37,5 @@ new Vue({
        this.$http.get('/api').then(response => {
            this.movies = response.data;
        });
-    }
+    },
 });
