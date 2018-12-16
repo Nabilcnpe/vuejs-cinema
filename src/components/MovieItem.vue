@@ -18,16 +18,14 @@
 </template>
 <script>
     export default {
-        props: ['movie', 'sessions', 'day'],
+        props: ['movie', 'sessions', 'day', 'time', 'moviePassesTimeFilter'],
         methods: {
             formatSessionTime(raw) {
                 return this.$moment(raw).format('h:mm A');
             },
             filteredSessions(sessions) {
-                return sessions.filter(session => {
-                    return this.$moment(session.time).isSame(this.day, 'day');
-                })
-            }
+                return sessions.filter(this.moviePassesTimeFilter)
+            },
         }
     }
 </script>
