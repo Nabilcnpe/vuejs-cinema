@@ -19,7 +19,7 @@ Object.defineProperty(Vue.prototype, '$bus', { value: bus });
 const router = new VueRouter({
     routes: [
         {path: '/', component: OverView, name: 'home'},
-        {path: '/movie', component: Detail, name: 'movie'},
+        {path: '/movie/:id', component: Detail, name: 'movie'},
         {path: '*', redirect: {name: 'home'}},
     ],
 });
