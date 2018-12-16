@@ -1,10 +1,9 @@
 import Vue from 'vue';
 import './style.scss';
 import VueResource from 'vue-resource';
-
-import MovieList from './components/MovieList.vue';
-import MovieFilter from './components/MovieFilter.vue';
 import moment from 'moment-timezone';
+
+import OverView from './components/OverView.vue';
 
 Vue.use(VueResource);
 
@@ -37,8 +36,7 @@ new Vue({
        },
     },
    components: {
-       MovieList,
-       MovieFilter,
+       OverView,
    },
     created() {
        this.$http.get('/api').then(response => {
