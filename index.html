@@ -19,7 +19,7 @@
         <h1>Vue.js Cinema</h1>
     </div>
     <div id="overview">
-        <over-view v-bind:genre="genre" v-bind:time="time" v-bind:movies="movies" v-bind:day="day"></over-view>
+        <router-view v-bind:genre="genre" v-bind:time="time" v-bind:movies="movies" v-bind:day="day"></router-view>
     </div>
 </div>
 <script src="/dist/build.js"></script>

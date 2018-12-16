@@ -1,12 +1,14 @@
 import Vue from 'vue';
-import './style.scss';
 import VueResource from 'vue-resource';
 import moment from 'moment-timezone';
 import VueRouter from 'vue-router';
 
+import './style.scss';
 import OverView from './components/OverView.vue';
+import Detail from './components/Detail.vue';
 
 Vue.use(VueResource);
+Vue.use(VueRouter);
 
 moment.tz.setDefault("UTC");
 Object.defineProperty(Vue.prototype, '$moment', { value: moment });
@@ -16,7 +18,9 @@ Object.defineProperty(Vue.prototype, '$bus', { value: bus });
 
 const router = new VueRouter({
     routes: [
-        {path: '/', component: OverView},
+        {path: '/', component: OverView, name: 'home'},
+        {path: '/movie', component: Detail, name: 'movie'},
+        {path: '*', redirect: {name: 'home'}},
     ],
 });
 
@@ -42,9 +46,6 @@ new Vue({
            }
        },
     },
-   components: {
-       OverView,
-   },
     created() {
        this.$http.get('/api').then(response => {
            this.movies = response.data;
