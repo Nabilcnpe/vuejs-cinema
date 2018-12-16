@@ -2,6 +2,7 @@ import Vue from 'vue';
 import './style.scss';
 import VueResource from 'vue-resource';
 import moment from 'moment-timezone';
+import VueRouter from 'vue-router';
 
 import OverView from './components/OverView.vue';
 
@@ -12,6 +13,12 @@ Object.defineProperty(Vue.prototype, '$moment', { value: moment });
 
 const bus = new Vue();
 Object.defineProperty(Vue.prototype, '$bus', { value: bus });
+
+const router = new VueRouter({
+    routes: [
+        {path: '/', component: OverView},
+    ],
+});
 
 new Vue({
    el: '#app',
@@ -44,4 +51,5 @@ new Vue({
        });
        this.$bus.$on('check-filter', this.checkFilter);
     },
+    router,
 });
