@@ -1,12 +1,4 @@
-# Ultimate Vue.js Developers Course
-
-Source code for the [Ultimate Vue.js Developers Course](http://bit.ly/2mPK8ny).
-
-### Project 2: Vue.js Cinema
-
-#### Demo
-
-See the completed project here: [http://vuejs-cinema.vuejsdevelopers.com/](http://vuejs-cinema.vuejsdevelopers.com/)
+### Project : Vue.js Cinema
 
 #### Pre-installation
 
@@ -45,16 +37,18 @@ See the completed project here: [http://vuejs-cinema.vuejsdevelopers.com/](http:
     ```
     
     Edit the .env file and replace any variables if needed
-    
-5. Start project
+
+5. build
+
+    ```
+    npm run build
+    ```
+        
+6. Start project
 
     ```
     npm run start
     ```
 
 Your site will be available at *localhost:[PORT]* where `PORT` is whatever value is set in your `.env` file.
-
-#### Lecture branches
-
-Note that branches in the repo named `lecture/xxx` correspond to course lectures.
 
